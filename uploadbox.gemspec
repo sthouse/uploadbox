@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'mini_magick',            '~> 3.6', '>= 3.6.0'
   s.add_dependency 'jbuilder',               '>= 1.2', '< 3'
   s.add_dependency 'resque',                 '~> 1.25', '>= 1.25.0'
+  s.add_dependency 'sidekiq',                '~> 3.0.2', '>= 3.0.0'
   s.add_dependency 'redis',                  '~> 3.0', '>= 3.0.4'
   s.add_dependency 'heroku-api',             '~> 0.3', '>= 0.3.15'
   s.add_dependency 'dotenv-rails',           '~> 0.10','>= 0.10.0'

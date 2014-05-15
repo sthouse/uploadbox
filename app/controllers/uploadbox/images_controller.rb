@@ -13,7 +13,8 @@ module Uploadbox
       upload = Uploadbox.const_get(upload_class_name).create!(attributes)
 
       if Uploadbox.background_processing
-        Resque.enqueue(ProcessImage, {id: upload.id, upload_class_name: upload_class_name})
+        ProcessImageWorker.perform_async({id: upload.id, upload_class_name: upload_class_name})
+        # Resque.enqueue(ProcessImage, {id: upload.id, upload_class_name: upload_class_name})
       else
         upload.process
       end
