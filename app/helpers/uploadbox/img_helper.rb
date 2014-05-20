@@ -20,9 +20,11 @@ module Uploadbox
           data = {
             processing: source.processing?,
             original: source.original_file,
+            original: options[:default] || source.original_file,
             component: 'ShowImage'
           }
           content_tag :div, class: 'uploadbox-image-container uploadbox-processing', style: "width: #{source.width}px; height: #{source.height}px", data: data do
+            content_tag(:span, I18n.t("uploadbox.image.processing"), class: "processing-alert") +
             image_tag(source.url, {width: source.width, height: source.height, style: 'display: none'}.merge(options))
           end
         else
@@ -32,7 +34,7 @@ module Uploadbox
           end
         end
       else
-        image_tag(source, options)
+        # image_tag(source, options)
       end
     end
 

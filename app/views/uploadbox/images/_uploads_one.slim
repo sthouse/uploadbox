@@ -17,9 +17,9 @@
         input name="[#{resource.class.name.underscore}]#{upload_name}" data-item="id" type="hidden" value="#{resource.send(upload_name).try :id}"
 
       .fileupload data-provides="fileupload" class="fileupload-#{(resource.send("#{upload_name}?") or default) ? 'exists' : 'new'}"
-        .fileupload-preview.preview data-version="#{version}" data-width="#{width}" data-height="#{height}" style="width: #{width}px; height: #{height}px;"
+        .fileupload-preview.preview data-version="#{version}" data-width="#{width}" data-height="#{height}" style="width: #{width}px; height: #{height}px;"          
           - if resource.send("#{upload_name}?")
-            = img resource.send(upload_name).send(version)
+            = img resource.send(upload_name).send(version), default: default ? default : nil
           - elsif default
             = image_tag default, width: width, height: height
 
