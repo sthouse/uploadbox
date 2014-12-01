@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
   s.add_dependency 'rails',                  '>= 4.0.4', '< 5'
-  s.add_dependency 'fog',                    '~> 1.15', '>= 1.15.0'
+  s.add_dependency 'fog',                    '~> 1.25', '>= 1.25.0'
   s.add_dependency 'carrierwave',            '~> 0.9', '>= 0.9.0'
   s.add_dependency 'carrierwave-processing', '~> 0.0', '>= 0.0.2'
   s.add_dependency 'mini_magick',            '~> 3.6', '>= 3.6.0'
